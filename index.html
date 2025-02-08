@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayen Hammami - Freelancer</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background: #f4f4f9;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin: 10px 0 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .hero button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: #ff6f61;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 50px;
+      transition: background 0.3s ease;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    .hero button:hover {
+      background: #ff4a3d;
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      background: white;
+      margin: 20px;
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .about img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #2575fc;
+    }
+
+    .about .bio {
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .about .bio h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .about .bio p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* Services Section */
+    .services {
+      background: white;
+      margin: 20px;
+      padding: 60px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #2c3e50;
+    }
+
+    .services .service-item {
+      display: inline-block;
+      width: 30%;
+      margin: 10px;
+      padding: 30px;
+      background: #f4f4f9;
+      border-radius: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .services .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .services .service-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2575fc;
+    }
+
+    .services .service-item p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      background: white;
+      margin: 20px;
+      padding: 60px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .portfolio h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #2c3e50;
+    }
+
+    .portfolio .project-item {
+      display: inline-block;
+      width: 30%;
+      margin: 10px;
+      padding: 30px;
+      background: #f4f4f9;
+      border-radius: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio .project-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .portfolio .project-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2575fc;
+    }
+
+    .portfolio .project-item p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background: white;
+      margin: 20px;
+      padding: 60px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #2c3e50;
+    }
+
+    .testimonials .testimonial-item {
+      display: inline-block;
+      width: 30%;
+      margin: 10px;
+      padding: 30px;
+      background: #f4f4f9;
+      border-radius: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonials .testimonial-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonials .testimonial-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .testimonials .testimonial-item p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .testimonials .testimonial-item p:last-child {
+      font-weight: bold;
+      color: #2575fc;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: white;
+      margin: 20px;
+      padding: 60px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #2c3e50;
+    }
+
+    .contact .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .contact .social-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: white;
+      background: #2575fc;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .contact .social-links a:hover {
+      background: #1a5bbf;
+    }
+
+    .contact .social-links a i {
+      margin-right: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Rayen Hammami</h1>
+    <p>Young Tunisian Freelancer </p>
+    <button onclick="scrollToContact()">Hire Me</button>
+    <div id="3d-animation"></div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <img src="./419242459_122106347954209745_6765724914621949179_n.jpg" alt="rayen hammami">
+    <div class="bio">
+      <h2>About Me</h2>
+      <p>
+        Hi, I'm Rayen Hammami, a passionate freelancer from Tunisia specializing in Branding and Editing. 
+        With over years of experience, I’ve helped businesses and individuals bring their ideas to life 
+        through modern clothes and videos. I’m dedicated to delivering high-quality work 
+        that not only looks great but also drives results. Let’s work together to create something amazing!
+      </p>
+      <button onclick="scrollToContact()">Let's Talk</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2>My Services</h2>
+    <div class="service-item">
+      <h3>Branding</h3>
+      <p>Create Professional desing and make cool clothes.</p>
+    </div>
+    <div class="service-item">
+      <h3>Digital marketing </h3>
+      <p>Make your products and services more visible to the public.</p>
+    </div>
+    <div class="service-item">
+      <h3>Video editing</h3>
+      <p>I can edit videos and make them smooth.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio">
+    <h2>My Portfolio</h2>
+    <div class="project-item">
+      <h3>Project 1</h3>
+      <img src="./Cupid Sniper Mockup.jpg" width="180" height="250" alt="">
+      <p>Cupid sniper mockup.</p>
+    </div>
+    <div class="project-item">
+      <h3>Project 2</h3>
+      <img src="./Capture d'écran 2025-01-28 210437.png"  width="180" height="250" alt="">
+      <p>Smile for the life .</p>
+    </div>
+    <div class="project-item">
+      <h3>Project 3</h3>
+      <img src="./Capture d'écran 2025-01-28 205545.png" width="180" height="250" alt="">
+      <p>Life is good .</p>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What My Clients Say</h2>
+    <div class="testimonial-item">
+      <img src="./476672021_1080015173814458_4001481589479747271_n_.jpg" alt="Client 1">
+      <p>"Ye rayen 5idimtik Tayara w mahlaha w nchlh t3mil ma5ir."</p>
+      <p>Client 1</p>
+    </div>
+    <div class="testimonial-item">
+      <img src="./475495712_587683750808951_4810451617063516115_n.jpg" alt="Client 2">
+      <p>"Brsm rayen khouia khdmtk mchallah w tayara 3al ekher ntmnelk lkhyr kol w keep going 🤍🤍."</p>
+      <p>Client 2</p>
+    </div>
+    <div class="testimonial-item">
+      <img src="./475968748_638037835342190_2396251059729399469_n.jpg" alt="Client 3">
+      <p>"Good job rayen  w nshlh tamml me khir wishing you all the success."</p>
+      <p>- Client 3</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  < <section class="contact">
+    <h2>Contact Me</h2>
+    <div class="social-links">
+      <a href="https://www.instagram.com/rayen_hamamii/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+
+      <a href="mailto:medrayenhammami01012005@gmail.com">
+        <i class="fas fa-envelope"></i> Email Me
+      </a>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your Rayen Hammami. All rights reserved.</p>
+  </footer>
+
+  <!-- Three.js for 3D Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // Three.js 3D Animation
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('3d-animation').appendChild(renderer.domElement);
+
+    const geometry = new THREE.IcosahedronGeometry(2, 0); // More complex shape
+    const material = new THREE.MeshPhongMaterial({ color: 0x00ff00, wireframe: true });
+    const shape = new THREE.Mesh(geometry, material);
+    scene.add(shape);
+
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(5, 5, 5).normalize();
+    scene.add(light);
+
+    camera.position.z = 5;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      shape.rotation.x += 0.01;
+      shape.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Smooth Scroll to Contact Section
+    function scrollToContact() {
+      document.querySelector('.contact').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
